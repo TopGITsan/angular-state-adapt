@@ -7,7 +7,7 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { Theme, themeButtonIcons, ThemeKey } from './theme.type';
+import { Theme, themeButtonIcons, ThemeKey } from '../theme.type';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +16,7 @@ import { Theme, themeButtonIcons, ThemeKey } from './theme.type';
     <mat-toolbar>
       <button
         mat-icon-button
-        aria-label=" icon-button with menu icon"
+        aria-label="icon-button with menu icon"
         (click)="openSidenav.emit()"
       >
         <mat-icon>menu</mat-icon>
@@ -25,8 +25,9 @@ import { Theme, themeButtonIcons, ThemeKey } from './theme.type';
       <span class="flex-auto"></span>
       <a
         mat-icon-button
-        class=" favorite-icon"
+        class="mx-2"
         href="https://github.com/TopGITsan"
+        title="https://github.com/TopGITsan"
         target="_blank"
         aria-label="GitHub Repository"
       >
@@ -39,8 +40,10 @@ import { Theme, themeButtonIcons, ThemeKey } from './theme.type';
         </svg>
       </a>
       <button
+        class="mx-2"
         mat-icon-button
-        [attr.aria-label]="'icon-button with icon'"
+        [attr.aria-label]="'icon-button with icon ' + theme()"
+        title="Change theme"
         (click)="changeTheme.emit()"
       >
         <mat-icon>{{ Theme[theme()] }}</mat-icon>
