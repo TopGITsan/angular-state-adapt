@@ -1,30 +1,25 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
+// css variables
+@use "variables" as variables;
+// material
 @use "@angular/material" as mat;
+// material custom theme
+@use "theme-colors" as customTheme;
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
+  // Must specify color-scheme for theme mixin to automatically work
   color-scheme: light dark;
+
   @include mat.theme(
     (
       color: (
-        theme-type: light,
-        primary: mat.$azure-palette,
-        tertiary: mat.$blue-palette,
-      ),
-      typography: Roboto,
-      density: 0,
-    )
-  );
-  @include mat.theme(
-    (
-      color: (
-        primary: mat.$violet-palette,
-        tertiary: mat.$orange-palette,
-        theme-type: dark,
+        primary: customTheme.$primary-palette,
+        tertiary: customTheme.$tertiary-palette,
       ),
       typography: Roboto,
       density: 0,
@@ -46,5 +41,12 @@ body.dark {
   color-scheme: dark;
 }
 body.light {
-  color-scheme: dark;
+  color-scheme: light;
 }
+// TODO:
+// The colors would automatically change between light, light high contrast, dark, and dark high contrast based on user's preferences.
+// Use high contrast values when users prefer contrast
+// has bugs: Top-level selectors may not contain the parent selector "&". in  node_modules/@angular/material/core/tokens/_m3-system.scss 99:3  theme-overrides()
+// @media (prefers-contrast: more) {
+//   @include customTheme.high-contrast-overrides(color-scheme);
+// }
