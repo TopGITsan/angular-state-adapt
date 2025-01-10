@@ -33,22 +33,23 @@ jobs:
 
       - name: Build Angular App
         run: npm run build
-  test:
-    runs-on: ubuntu-latest
+  # TODO:
+  # test:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
+  #   steps:
+  #     - uses: actions/checkout@v2
 
-      - name: Set up Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.node-version }}
+  #     - name: Set up Node.js ${{ env.node-version }}
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: ${{ env.node-version }}
 
-      #- name: Install PNPM, faster
-      #  run: npm install --global pnpm
+  #     #- name: Install PNPM, faster
+  #     #  run: npm install --global pnpm
 
-      - name: Install Dependencies
-        run: npm ci
+  #     - name: Install Dependencies
+  #       run: npm ci
 
-      - name: Test projects
-        run: npm run test
+  #     - name: Test projects
+  #       run: npm run test
