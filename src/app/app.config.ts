@@ -4,8 +4,9 @@ import {
   provideExperimentalCheckNoChangesForDebug,
   provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
-import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideRouter } from '@angular/router';
+import { defaultStoreProvider } from '@state-adapt/angular';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
@@ -13,6 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideExperimentalZonelessChangeDetection(),
     provideRouter(routes),
     provideAnimationsAsync(),
+    defaultStoreProvider,
     // only for development purposes
     isDevMode()
       ? provideExperimentalCheckNoChangesForDebug({
