@@ -7,11 +7,17 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { Theme, themeButtonIcons, ThemeKey } from '../theme.type';
+import { ThemeIconMap, themeButtonIcons, ThemeKey } from '../theme.type';
+import { ExternalLinkDirective } from '@shared/directives';
 
 @Component({
   selector: 'app-header',
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule],
+  imports: [
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    ExternalLinkDirective,
+  ],
   template: `
     <mat-toolbar>
       <button
@@ -28,7 +34,6 @@ import { Theme, themeButtonIcons, ThemeKey } from '../theme.type';
         class="mx-2"
         href="https://github.com/TopGITsan"
         title="https://github.com/TopGITsan"
-        target="_blank"
         aria-label="GitHub Repository"
       >
         <svg viewBox="0 0 20 20" aria-hidden="true" class="w-6 h-6">
@@ -46,7 +51,7 @@ import { Theme, themeButtonIcons, ThemeKey } from '../theme.type';
         title="Change theme"
         (click)="changeTheme.emit()"
       >
-        <mat-icon>{{ Theme[theme()] }}</mat-icon>
+        <mat-icon>{{ Theme[theme() ?? ''] }}</mat-icon>
       </button>
     </mat-toolbar>
   `,
@@ -59,8 +64,8 @@ import { Theme, themeButtonIcons, ThemeKey } from '../theme.type';
 })
 export class HeaderComponent {
   readonly icons = themeButtonIcons;
-  readonly Theme = Theme;
-  readonly theme = input<ThemeKey>('os-default');
+  readonly Theme = ThemeIconMap;
+  readonly theme = input<ThemeKey | null>('');
   readonly openSidenav = output<void>();
   readonly changeTheme = output<void>();
 }
