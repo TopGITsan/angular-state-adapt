@@ -1,25 +1,12 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/ui/header.component';
-import { ThemeStoreService } from './store/theme-store/theme-store.service';
-import { AsyncPipe } from '@angular/common';
-import { Observable } from 'rxjs';
-import { ThemeKey } from './header/theme.type';
-import { nextThemeChange$ } from './actions/theme.actions';
+import { HeaderComponent } from './header/header.component';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatSidenavModule, HeaderComponent, AsyncPipe],
+  imports: [RouterOutlet, MatSidenavModule, HeaderComponent],
   template: `
-    <app-header
-      [theme]="theme$ | async"
-      (changeTheme)="changeToNextTheme$.next()"
-    />
+    <app-header />
     <mat-sidenav-container class="grow">
       <mat-sidenav mode="side" [opened]="openSidenav()"
         >Sidenav content</mat-sidenav
@@ -44,8 +31,4 @@ import { nextThemeChange$ } from './actions/theme.actions';
 export class AppComponent {
   readonly title = 'angular-state-adapt';
   readonly openSidenav = signal<boolean>(true);
-  readonly themeStore = inject(ThemeStoreService);
-  // TODO : remove assertion
-  readonly theme$ = this.themeStore.store.theme$ as Observable<ThemeKey | null>;
-  readonly changeToNextTheme$ = nextThemeChange$;
 }

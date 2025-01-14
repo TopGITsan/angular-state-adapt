@@ -1,9 +1,9 @@
 import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/ui/header.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { defaultStoreProvider } from '@state-adapt/angular';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

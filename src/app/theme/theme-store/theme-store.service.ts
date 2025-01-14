@@ -4,7 +4,7 @@ import { createAdapter } from '@state-adapt/core';
 import { toSource } from '@state-adapt/rxjs';
 import { of } from 'rxjs';
 import { nextThemeChange$ } from '../../actions/theme.actions';
-import { isThemeKey, themeValues } from '../../header/theme.type';
+import { isThemeKey, themeValues } from '../theme.type';
 
 @Injectable({
   providedIn: 'root',

@@ -1,14 +1,10 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  input,
-  output,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ThemeIconMap, themeButtonIcons, ThemeKey } from '../theme.type';
 import { ExternalLinkDirective } from '@shared/directives';
+import { themeButtonIcons } from '@theme/theme.type';
+import { ThemeIconButtonComponent } from '@theme/ui/theme-icon-button/theme-icon-button.component';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +13,7 @@ import { ExternalLinkDirective } from '@shared/directives';
     MatButtonModule,
     MatIconModule,
     ExternalLinkDirective,
+    ThemeIconButtonComponent,
   ],
   template: `
     <mat-toolbar>
@@ -44,15 +41,7 @@ import { ExternalLinkDirective } from '@shared/directives';
           ></path>
         </svg>
       </a>
-      <button
-        class="mx-2"
-        mat-icon-button
-        [attr.aria-label]="'icon-button with icon ' + theme()"
-        title="Change theme"
-        (click)="changeTheme.emit()"
-      >
-        <mat-icon>{{ Theme[theme() ?? ''] }}</mat-icon>
-      </button>
+      <app-theme-icon-button />
     </mat-toolbar>
   `,
   styles: `
@@ -64,8 +53,5 @@ import { ExternalLinkDirective } from '@shared/directives';
 })
 export class HeaderComponent {
   readonly icons = themeButtonIcons;
-  readonly Theme = ThemeIconMap;
-  readonly theme = input<ThemeKey | null>('');
   readonly openSidenav = output<void>();
-  readonly changeTheme = output<void>();
 }
