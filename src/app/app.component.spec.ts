@@ -1,12 +1,19 @@
 import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { defaultStoreProvider } from '@state-adapt/angular';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [provideExperimentalZonelessChangeDetection()],
-      imports: [AppComponent],
+      providers: [
+        provideExperimentalZonelessChangeDetection(),
+        provideAnimationsAsync(),
+        defaultStoreProvider,
+      ],
+      imports: [AppComponent, HeaderComponent],
     }).compileComponents();
   });
 
@@ -29,7 +36,7 @@ describe('AppComponent', () => {
 
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Hello, angular-state-adapt'
+      'Hello, angular-state-adapt',
     );
   });
 });
