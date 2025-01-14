@@ -1,9 +1,9 @@
+import { nextThemeChange$ } from '@actions/theme.actions';
 import { Injectable } from '@angular/core';
 import { adapt } from '@state-adapt/angular';
 import { createAdapter } from '@state-adapt/core';
 import { toSource } from '@state-adapt/rxjs';
 import { of } from 'rxjs';
-import { nextThemeChange$ } from '../../actions/theme.actions';
 import { isThemeKey, themeValues } from '../theme.type';
 
 @Injectable({
