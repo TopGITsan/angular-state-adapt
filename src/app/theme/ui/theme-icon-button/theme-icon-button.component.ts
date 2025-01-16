@@ -10,6 +10,7 @@ import { ThemeIconMap, ThemeKey } from '../../theme.type';
 @Component({
   selector: 'app-theme-icon-button',
   imports: [MatButtonModule, MatIconModule, AsyncPipe],
+  providers: [ThemeStoreService],
   template: `
     @let theme = theme$ | async;
     <button
@@ -30,6 +31,6 @@ export class ThemeIconButtonComponent {
 
   readonly themeStore = inject(ThemeStoreService);
   readonly theme$ = this.themeStore.store
-    .theme$ as Observable<unknown> as Observable<ThemeKey>;
+    .state$ as Observable<unknown> as Observable<ThemeKey>;
   readonly changeToNextTheme$ = nextThemeChange$;
 }

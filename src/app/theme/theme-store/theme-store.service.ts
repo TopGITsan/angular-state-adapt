@@ -1,14 +1,12 @@
 import { nextThemeChange$ } from '@actions/theme.actions';
 import { Injectable } from '@angular/core';
 import { adapt } from '@state-adapt/angular';
-import { createAdapter } from '@state-adapt/core';
+import { createAdapter, getId } from '@state-adapt/core';
 import { toSource } from '@state-adapt/rxjs';
 import { of } from 'rxjs';
 import { isThemeKey, themeValues } from '../theme.type';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ThemeStoreService {
   readonly store = adapt('', {
     // TODO: can the type be ThemeKey ?
@@ -20,9 +18,6 @@ export class ThemeStoreService {
       storageTheme: (state, event: string, initialState: string) => {
         return setColorTheme(event);
       },
-      selectors: {
-        theme: (theme) => theme, // Will be memoized
-      },
     }),
     sources: {
       changeTheme: nextThemeChange$,
@@ -30,6 +25,7 @@ export class ThemeStoreService {
         toSource('[Theme] themeFromStorage$'),
       ),
     },
+    path: 'theme_' + getId(),
   });
 }
 

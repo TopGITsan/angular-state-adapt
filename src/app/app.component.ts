@@ -36,6 +36,6 @@ import { HeaderComponent } from './header/header.component';
 export class AppComponent {
   readonly title = 'angular-state-adapt';
   private readonly globalStore = inject(GlobalStoreService);
-  readonly sidenavOpened$ = this.globalStore.store.sidenavOpened$;
+  readonly sidenavOpened$ = this.globalStore.store.isSidenavOpendState$;
   readonly toggleSidenav$ = toggleSidenavChange$;
 }

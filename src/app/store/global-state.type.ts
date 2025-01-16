@@ -1,7 +1,8 @@
 export interface GlobalState {
-  sidenavOpened: boolean;
+  isSidenavOpend: boolean;
+  error: {} | null;
 }
-
 export const initialGlobalState: GlobalState = {
-  sidenavOpened: true,
+  isSidenavOpend: true,
+  error: null,
 };
