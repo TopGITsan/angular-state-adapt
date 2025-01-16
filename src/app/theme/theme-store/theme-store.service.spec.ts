@@ -8,7 +8,7 @@ describe('ThemeStoreService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [defaultStoreProvider],
+      providers: [defaultStoreProvider, ThemeStoreService],
     });
     service = TestBed.inject(ThemeStoreService);
   });
