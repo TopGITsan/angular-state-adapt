@@ -33,7 +33,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: theme("fontFamily.sans");
   background: var(--mat-sys-surface);
 }
 

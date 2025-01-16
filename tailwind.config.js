@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require("tailwindcss/defaultTheme");
+const Unfonts = require("unplugin-fonts");
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
+    fontFamily: {
+      ...fontFamily,
+      sans: ["Roboto", "Helvetica Neue", "sans-serif", ...fontFamily.sans],
+    },
     extend: {
       colors: {
         primary: {
