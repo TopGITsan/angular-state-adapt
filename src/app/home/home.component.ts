@@ -5,7 +5,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [],
   template: `
     <div>
-      <h1 class="text-3xl font-bold underline text-red-500">Hello!</h1>
+      <h1 class="text-clamp text-red-500 font-vibes">
+        Hello!
+      </h1>
     </div>
   `,
   styles: `
