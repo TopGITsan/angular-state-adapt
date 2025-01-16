@@ -11,6 +11,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Vibes";
+  src: url("../public/fonts/great-vibes-font/GreatVibes-Wmr4.ttf");
+}
+
 html {
   // Must specify color-scheme for theme mixin to automatically work
   color-scheme: light dark;
