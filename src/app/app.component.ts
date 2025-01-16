@@ -3,18 +3,18 @@ import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { routeTransition } from '@shared/animations/route-transition.animation';
 import { GlobalStoreService } from '@store/global-store.service';
 import { HeaderComponent } from './header/header.component';
-import { routeTransition } from '@shared/animations/route-transition.animation';
 
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet,
-    MatSidenavModule,
-    HeaderComponent,
     AsyncPipe,
+    HeaderComponent,
+    MatSidenavModule,
     RouterLink,
+    RouterOutlet,
   ],
   template: `
     @let sidenavOpened = sidenavOpened$ | async;
