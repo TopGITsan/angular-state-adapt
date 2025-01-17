@@ -4,14 +4,20 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { defaultStoreProvider } from '@state-adapt/angular';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { ActivatedRoute } from '@angular/router';
 
 describe('AppComponent', () => {
+  const fakeActivatedRoute = {
+    snapshot: { data: {} },
+  } as ActivatedRoute;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       providers: [
         provideExperimentalZonelessChangeDetection(),
         provideAnimationsAsync(),
         defaultStoreProvider,
+        { provide: ActivatedRoute, useValue: fakeActivatedRoute },
       ],
       imports: [AppComponent, HeaderComponent],
     }).compileComponents();
