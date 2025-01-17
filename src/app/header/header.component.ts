@@ -24,7 +24,7 @@ import { ThemeIconButtonComponent } from '@theme/ui/theme-icon-button/theme-icon
       >
         <mat-icon>menu</mat-icon>
       </button>
-      <span>zLess App</span>
+      <span>Less is More</span>
       <span class="flex-auto"></span>
       <a
         mat-icon-button

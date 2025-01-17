@@ -1,8 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
+    fontFamily: {
+      ...fontFamily,
+      sans: ["Roboto", "Helvetica Neue", "sans-serif", ...fontFamily.sans],
+      vibes: ["Vibes", ...fontFamily.sans],
+    },
     extend: {
+      fontSize: {
+        clamp: "clamp(1rem, 5vw, 6rem)",
+      },
       colors: {
         primary: {
           0: "var(--primary-0)",

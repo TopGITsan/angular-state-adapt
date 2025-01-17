@@ -11,6 +11,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Vibes";
+  src: url("../public/fonts/great-vibes-font/GreatVibes-Wmr4.ttf");
+}
+
 html {
   // Must specify color-scheme for theme mixin to automatically work
   color-scheme: light dark;
@@ -33,7 +38,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: theme("fontFamily.sans");
   background: var(--mat-sys-surface);
 }
 
