@@ -3,7 +3,7 @@ import { booleanAdapter } from '@state-adapt/core/adapters';
 import { GlobalState, SidenavMode } from './global-state.type';
 
 const sidenavAdapter = booleanAdapter;
-const errorAdapter = createAdapter<{} | null>()({
+const errorAdapter = createAdapter<object | null>()({
   setNull: () => null,
 });
 const sidenavModeAdapter = createAdapter<SidenavMode>()({

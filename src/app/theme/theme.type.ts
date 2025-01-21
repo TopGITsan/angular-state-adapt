@@ -13,8 +13,8 @@ export const themeButtonIcons = Object.values(ThemeIconMap).filter(
   (k): k is ThemeIconMap => typeof k === 'string',
 );
 
-export function isThemeKey(key: any): boolean {
+export function isThemeKey(key: unknown): boolean {
   return (
-    key && typeof key === 'string' && themeValues.includes(key as ThemeKey)
+    !!key && typeof key === 'string' && themeValues.includes(key as ThemeKey)
   );
 }
