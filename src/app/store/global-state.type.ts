@@ -1,7 +1,7 @@
 export type SidenavMode = 'over' | 'side';
 export interface GlobalState {
   isSidenavOpend: boolean;
-  error: {} | null;
+  error: object | null;
   sidenavMode: SidenavMode;
 }
 export const initialGlobalState: GlobalState = {

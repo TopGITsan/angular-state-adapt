@@ -11,11 +11,11 @@ export class ThemeStoreService {
   readonly store = adapt('', {
     // TODO: can the type be ThemeKey ?
     adapter: createAdapter<string>()({
-      changeTheme: (state, event, initialState: string) => {
+      changeTheme: (state) => {
         const nextTheme = nextValueFromArray(state, themeValues);
         return setColorTheme(nextTheme, state);
       },
-      storageTheme: (state, event: string, initialState: string) => {
+      storageTheme: (state, event: string) => {
         return setColorTheme(event);
       },
     }),
@@ -29,11 +29,11 @@ export class ThemeStoreService {
   });
 }
 
-export function setColorTheme(themeToSet: string, themeToRemove: string = '') {
+export function setColorTheme(themeToSet: string, themeToRemove = '') {
   if (!isThemeKey(themeToSet)) {
     themeToSet = '';
   }
-
+  /* eslint-disable  @typescript-eslint/no-unused-expressions */
   themeToRemove &&
     document.querySelector('body')!.classList.remove(themeToRemove);
   themeToSet && document.querySelector('body')!.classList.add(themeToSet);
