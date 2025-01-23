@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
+import { getTranslocoTestingModule } from '@transloco/get-transloco-testing-module.function';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,7 +9,7 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       providers: [],
-      imports: [HomeComponent],
+      imports: [HomeComponent, getTranslocoTestingModule()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);
@@ -19,12 +20,13 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should render title', async () => {
+  it('should render title', () => {
     const fixture = TestBed.createComponent(HomeComponent);
 
-    await fixture.whenStable();
+    fixture.detectChanges();
 
     const compiled = fixture.nativeElement as HTMLElement;
+
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello!');
   });
 });

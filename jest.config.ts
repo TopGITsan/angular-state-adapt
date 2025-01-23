@@ -97,6 +97,8 @@ const config: Config = {
     '^@store/(.+)$': '<rootDir>/src/app/store/$1',
     '^@home/(.+)$': '<rootDir>/src/app/home/$1',
     '^@about/(.+)$': '<rootDir>/src/app/about/$1',
+    '^@transloco/(.+)$': '<rootDir>/src/app/transloco/$1',
+
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

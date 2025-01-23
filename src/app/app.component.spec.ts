@@ -5,6 +5,7 @@ import { defaultStoreProvider } from '@state-adapt/angular';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ActivatedRoute } from '@angular/router';
+import { getTranslocoTestingModule } from '@transloco/get-transloco-testing-module.function';
 
 describe('AppComponent', () => {
   const fakeActivatedRoute = {
@@ -19,7 +20,7 @@ describe('AppComponent', () => {
         defaultStoreProvider,
         { provide: ActivatedRoute, useValue: fakeActivatedRoute },
       ],
-      imports: [AppComponent, HeaderComponent],
+      imports: [AppComponent, HeaderComponent, getTranslocoTestingModule()],
     }).compileComponents();
   });
 
