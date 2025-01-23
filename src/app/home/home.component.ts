@@ -1,14 +1,14 @@
+import { TitleCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [TitleCasePipe, TranslocoPipe],
   template: `
-    <div>
       <h1 class="text-clamp text-red-500 font-vibes">
-        Hello!
+        {{ 'hello' | transloco | titlecase }}!
       </h1>
-    </div>
   `,
   styles: `
     :host {
