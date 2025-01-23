@@ -1,5 +1,5 @@
 import { InlineLoader, Translation } from '@jsverse/transloco';
-import { langList } from './lang.types';
+import { langList } from './lang.state';
 
 export const inlineLoader = (
   importer: (lang: string, folder: string) => Promise<Translation>,

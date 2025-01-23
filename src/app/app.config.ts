@@ -9,12 +9,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideRouter } from '@angular/router';
 import { provideTransloco } from '@jsverse/transloco';
 import { defaultStoreProvider } from '@state-adapt/angular';
-import {
-  fallbackLang,
-  getBrowserLanguage,
-  langList,
-} from '@transloco/lang.types';
-import { TranslocoHttpLoader } from '@transloco/transloco-loader';
+import { getBrowserLanguage } from '@transloco/get-browser-language.function';
+import { fallbackLang, langList } from '@transloco/lang.state';
+import { TranslocoHttpLoader } from '@transloco/transloco-loader.service';
 import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
