@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AboutComponent } from './about.component';
+import { TRANSLOCO_SCOPE } from '@jsverse/transloco';
 import { ContentComponent } from '@shared/ui/content/content.component';
+import { getTranslocoTestingModule } from '@transloco/get-transloco-testing-module.function';
+import { AboutComponent } from './about.component';
 
 describe('AboutComponent', () => {
   let component: AboutComponent;
@@ -9,7 +11,8 @@ describe('AboutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AboutComponent, ContentComponent],
+      imports: [AboutComponent, ContentComponent, getTranslocoTestingModule()],
+      providers: [{ provide: TRANSLOCO_SCOPE, useValue: 'about' }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AboutComponent);
