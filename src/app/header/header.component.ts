@@ -5,6 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ExternalLinkDirective } from '@shared/directives';
 import { themeButtonIcons } from '@theme/theme.type';
 import { ThemeIconButtonComponent } from '@theme/ui/theme-icon-button/theme-icon-button.component';
+import { LangMenuButtonComponent } from '@transloco/ui/lang-menu-button/lang-menu-button.component';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,7 @@ import { ThemeIconButtonComponent } from '@theme/ui/theme-icon-button/theme-icon
     MatIconModule,
     ExternalLinkDirective,
     ThemeIconButtonComponent,
+    LangMenuButtonComponent,
   ],
   template: `
     <mat-toolbar>
@@ -42,6 +44,7 @@ import { ThemeIconButtonComponent } from '@theme/ui/theme-icon-button/theme-icon
         </svg>
       </a>
       <app-theme-icon-button />
+      <app-lang-menu-button />
     </mat-toolbar>
   `,
   styles: `
