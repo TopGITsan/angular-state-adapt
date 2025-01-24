@@ -4,7 +4,7 @@ import { adapt } from '@state-adapt/angular';
 import { createAdapter, getId } from '@state-adapt/core';
 import { toSource } from '@state-adapt/rxjs';
 import { of } from 'rxjs';
-import { isThemeKey, themeValues } from '../theme.type';
+import { isThemeKey, themeLocalStorageKey, themeValues } from '../theme.type';
 
 @Injectable()
 export class ThemeStoreService {
@@ -38,13 +38,13 @@ export function setColorTheme(themeToSet: string, themeToRemove = '') {
     document.querySelector('body')!.classList.remove(themeToRemove);
   themeToSet && document.querySelector('body')!.classList.add(themeToSet);
 
-  localStorage.setItem('theme', themeToSet);
+  localStorage.setItem(themeLocalStorageKey, themeToSet);
 
   return themeToSet;
 }
 
 export function getColorTheme() {
-  return localStorage.getItem('theme') ?? '';
+  return localStorage.getItem(themeLocalStorageKey) ?? '';
 }
 function nextValueFromArray(arrayValue: string, array: string[]): string {
   if (

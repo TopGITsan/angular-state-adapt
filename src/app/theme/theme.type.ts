@@ -1,5 +1,7 @@
 // export const themes = ['os-default', 'dark', 'light'] as const;
 // export type Theme = (typeof themes)[number];
+
+export const themeLocalStorageKey = 'less-theme'
 export enum ThemeIconMap {
   '' = 'deblur',
   'dark' = 'dark_mode',
