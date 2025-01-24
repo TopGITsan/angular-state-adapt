@@ -10,7 +10,7 @@ import { provideRouter } from '@angular/router';
 import { provideTransloco } from '@jsverse/transloco';
 import { defaultStoreProvider } from '@state-adapt/angular';
 import { getBrowserLanguage } from '@transloco/get-browser-language.function';
-import { fallbackLang, langList } from '@transloco/lang.state';
+import { fallbackLang, langList } from '@transloco/lang.constants';
 import { TranslocoHttpLoader } from '@transloco/transloco-loader.service';
 import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
