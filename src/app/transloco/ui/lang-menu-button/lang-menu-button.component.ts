@@ -4,10 +4,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { provideTranslocoScope, TranslocoDirective } from '@jsverse/transloco';
-import { GlobalStoreService } from '@store/global-store.service';
 import { inlineLoader } from '@transloco/inline-loader.function';
+import { LangStoreService } from '@transloco/lang-store/lang-store.service';
+import { languageChange$ } from '@transloco/lang-store/language.actions';
 import { langList } from '@transloco/lang.constants';
-import { languageChange$ } from '@transloco/language.actions';
 
 @Component({
   selector: 'app-lang-menu-button',
@@ -60,8 +60,8 @@ import { languageChange$ } from '@transloco/language.actions';
   styles: ``,
 })
 export class LangMenuButtonComponent {
-  private readonly globalStore = inject(GlobalStoreService);
+  private readonly globalStore = inject(LangStoreService);
   readonly langList = langList;
-  readonly selectedLanguage$ = this.globalStore.store.languageState$;
+  readonly selectedLanguage$ = this.globalStore.store.lang$;
   readonly languageChange$ = languageChange$;
 }
