@@ -1,3 +1,4 @@
+import { languageChange$ } from '@actions/lang.actions';
 import { AsyncPipe, TitleCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -6,7 +7,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { provideTranslocoScope, TranslocoDirective } from '@jsverse/transloco';
 import { inlineLoader } from '@transloco/inline-loader.function';
 import { LangStoreService } from '@transloco/lang-store/lang-store.service';
-import { languageChange$ } from '@transloco/lang-store/language.actions';
 import { langList } from '@transloco/lang.constants';
 
 @Component({

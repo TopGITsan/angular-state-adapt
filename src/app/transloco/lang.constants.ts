@@ -2,7 +2,7 @@ import { Lang, LangMap } from './lang.types';
 
 export const languageLocalStorageKey = 'less-language';
 export const fallbackLang: Lang = 'en';
-export const storePrefix = 'Lang';
+export const langStorePrefix = 'Lang';
 // app.config
 // The type 'readonly ["de", "fr", "en", "es", "it", "ro"]' is 'readonly' and cannot be assigned to the mutable type 'LangDefinition[]'
 // export const LANG_LIST = ['de', 'fr', 'en', 'es', 'it', 'ro'] as const;
