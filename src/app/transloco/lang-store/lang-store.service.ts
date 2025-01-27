@@ -31,11 +31,11 @@ export class LangStoreService {
     sources: {
       changeLang: merge(this.languageFromStorage$, languageChange$).pipe(
         tap((action) => this.translocoService.setActiveLang(action.payload)),
-        switchMap(() =>
+        switchMap((action) =>
           this.translocoService.langChanges$.pipe(
             filter((lang): lang is Lang => isLang(lang)),
             tap((lang) => setLanguageToLocalStorage(lang)),
-            toSource(`[${langStorePrefix}] Transloco langChanges$`),
+            toSource(action.type),
           ),
         ),
       ),
