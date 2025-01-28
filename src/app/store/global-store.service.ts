@@ -10,17 +10,18 @@ import { toSource } from '@state-adapt/rxjs';
 import { filter } from 'rxjs';
 import { initialGlobalState } from './global-state.type';
 import { globalAdapter } from './global.adapter';
+import { globalStorePrefix } from './global.constants';
+
 @Injectable({
   providedIn: 'root',
 })
 export class GlobalStoreService {
   private readonly breakpointObserver = inject(BreakpointObserver);
-
   sidenavModeOverChange$ = this.breakpointObserver
     .observe(['(min-width: 960px)'])
     .pipe(
       filter((state) => state.matches),
-      toSource('[Global] sidenavModeOverChange$'),
+      toSource(`[${globalStorePrefix}] sidenavModeOverChange$`),
     );
   readonly store = adapt(initialGlobalState, {
     adapter: globalAdapter,
@@ -31,10 +32,10 @@ export class GlobalStoreService {
         .observe(['(max-width: 959px)'])
         .pipe(
           filter((state) => state.matches),
-          toSource('[Global] sidenavModeOverChange$'),
+          toSource(`[${globalStorePrefix}] sidenavModeOverChange$`),
         ),
       setSidenavModeSide: this.sidenavModeOverChange$,
     },
-    path: 'global_' + getId(),
+    path: globalStorePrefix + '_' + getId(),
   });
 }

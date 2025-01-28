@@ -1,9 +1,10 @@
 import { Source } from '@state-adapt/rxjs';
+import { globalStorePrefix } from '@store/global.constants';
 
 export const toggleSidenavChange$ = new Source<void>(
-  '[Global] toggleSidenavChange$',
+  `[${globalStorePrefix}] toggleSidenavChange$`,
 );
 
 export const closeSidenavChange$ = new Source<void>(
-  '[Global] closeSidenavChange$',
+  `[${globalStorePrefix}] closeSidenavChange$`,
 );

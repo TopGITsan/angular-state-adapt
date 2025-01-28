@@ -6,8 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { provideTranslocoScope, TranslocoDirective } from '@jsverse/transloco';
 import { ThemeStoreService } from '@theme/theme-store/theme-store.service';
 import { inlineLoader } from '@transloco/inline-loader.function';
-import { Observable } from 'rxjs';
-import { ThemeIconMap, ThemeKey } from '../../theme.type';
+import { ThemeIconMap } from '../../theme.type';
 
 @Component({
   selector: 'app-theme-icon-button',
@@ -43,7 +42,6 @@ export class ThemeIconButtonComponent {
   readonly Theme = ThemeIconMap;
 
   readonly themeStore = inject(ThemeStoreService);
-  readonly theme$ = this.themeStore.store
-    .state$ as Observable<unknown> as Observable<ThemeKey>;
+  readonly theme$ = this.themeStore.store.theme$
   readonly changeToNextTheme$ = nextThemeChange$;
 }

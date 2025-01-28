@@ -15,7 +15,7 @@ import es from '../../assets/i18n/es.json';
 import fr from '../../assets/i18n/fr.json';
 import it from '../../assets/i18n/it.json';
 import ro from '../../assets/i18n/ro.json';
-import { langList } from './lang.state';
+import { langList } from './lang.constants';
 
 export function getTranslocoTestingModule(options: TranslocoTestingOptions = {}) {
   const { langs, translocoConfig, ...rest } = options;

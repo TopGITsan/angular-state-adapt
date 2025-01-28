@@ -7,11 +7,8 @@ import {
 } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
-import { provideTransloco } from '@jsverse/transloco';
 import { defaultStoreProvider } from '@state-adapt/angular';
-import { getBrowserLanguage } from '@transloco/get-browser-language.function';
-import { fallbackLang, langList } from '@transloco/lang.state';
-import { TranslocoHttpLoader } from '@transloco/transloco-loader.service';
+import { provideAppTransloco } from '@transloco/provide-app-transloco.provider';
 import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -28,16 +25,6 @@ export const appConfig: ApplicationConfig = {
         })
       : [],
     provideHttpClient(),
-    provideTransloco({
-      config: {
-        availableLangs: langList,
-        defaultLang: getBrowserLanguage(),
-        fallbackLang: fallbackLang,
-        // Remove this option if your application doesn't support changing language in runtime.
-        reRenderOnLangChange: true,
-        prodMode: false, // !isDevMode(),
-      },
-      loader: TranslocoHttpLoader,
-    }),
+    provideAppTransloco(),
   ],
 };

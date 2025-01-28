@@ -1,6 +1,6 @@
 import { getBrowserLang } from '@jsverse/transloco';
 import { isLang } from './is-lang.function';
-import { fallbackLang } from './lang.state';
+import { fallbackLang } from './lang.constants';
 import { Lang } from './lang.types';
 
 export function getBrowserLanguage(): Lang {

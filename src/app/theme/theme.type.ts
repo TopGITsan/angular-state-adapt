@@ -1,5 +1,7 @@
 // export const themes = ['os-default', 'dark', 'light'] as const;
 // export type Theme = (typeof themes)[number];
+
+export const themeLocalStorageKey = 'less-theme';
 export enum ThemeIconMap {
   '' = 'deblur',
   'dark' = 'dark_mode',
@@ -14,7 +16,5 @@ export const themeButtonIcons = Object.values(ThemeIconMap).filter(
 );
 
 export function isThemeKey(key: unknown): boolean {
-  return (
-    !!key && typeof key === 'string' && themeValues.includes(key as ThemeKey)
-  );
+  return typeof key === 'string' && themeValues.includes(key as ThemeKey);
 }
