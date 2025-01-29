@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { getTranslocoTestingModule } from '@transloco/get-transloco-testing-module.function';
+import { getTranslocoTestingModule } from '@internalization/get-transloco-testing-module.function';
 import { LangMenuButtonComponent } from './lang-menu-button.component';
 import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { defaultStoreProvider } from '@state-adapt/angular';

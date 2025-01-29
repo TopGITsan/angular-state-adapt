@@ -4,7 +4,7 @@ import { HeaderComponent } from './header.component';
 import { ExternalLinkDirective } from '@shared/directives';
 import { ThemeIconButtonComponent } from '@theme/ui/theme-icon-button/theme-icon-button.component';
 import { defaultStoreProvider } from '@state-adapt/angular';
-import { getTranslocoTestingModule } from '@transloco/get-transloco-testing-module.function';
+import { getTranslocoTestingModule } from '@internalization/get-transloco-testing-module.function';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;

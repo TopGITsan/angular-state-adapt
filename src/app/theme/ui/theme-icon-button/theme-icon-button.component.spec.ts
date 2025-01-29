@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ThemeIconButtonComponent } from './theme-icon-button.component';
 import { defaultStoreProvider } from '@state-adapt/angular';
 import { provideExperimentalZonelessChangeDetection } from '@angular/core';
-import { getTranslocoTestingModule } from '@transloco/get-transloco-testing-module.function';
+import { getTranslocoTestingModule } from '@internalization/get-transloco-testing-module.function';
 
 describe('ThemeIconButtonComponent', () => {
   let component: ThemeIconButtonComponent;

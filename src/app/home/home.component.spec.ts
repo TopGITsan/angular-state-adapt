@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
-import { getTranslocoTestingModule } from '@transloco/get-transloco-testing-module.function';
+import { getTranslocoTestingModule } from '@internalization/get-transloco-testing-module.function';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;

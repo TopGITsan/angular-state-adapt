@@ -1,5 +1,5 @@
-import { fallbackLang } from '@transloco/lang.constants';
-import { Lang } from '@transloco/lang.types';
+import { fallbackLang } from '@internalization/lang.constants';
+import { Lang } from '@internalization/lang.types';
 
 export interface LangugageState {
   lang: Lang;

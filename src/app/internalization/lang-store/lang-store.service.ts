@@ -3,13 +3,13 @@ import { TranslocoService } from '@jsverse/transloco';
 import { adapt } from '@state-adapt/angular';
 import { getId } from '@state-adapt/core';
 import { toSource } from '@state-adapt/rxjs';
-import { isLang } from '@transloco/is-lang.function';
+import { isLang } from '@internalization/is-lang.function';
 import {
   getLanguageFromLocalStorage,
   setLanguageToLocalStorage,
-} from '@transloco/lang-local-storage';
-import { langStorePrefix } from '@transloco/lang.constants';
-import { Lang } from '@transloco/lang.types';
+} from '@internalization/lang-local-storage';
+import { langStorePrefix } from '@internalization/lang.constants';
+import { Lang } from '@internalization/lang.types';
 import { filter, merge, of, switchMap, tap } from 'rxjs';
 import { initialLanguageState } from './lang-state.type';
 import { languageAdapter } from './language.adapter';

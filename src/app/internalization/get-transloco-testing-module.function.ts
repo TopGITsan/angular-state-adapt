@@ -15,6 +15,12 @@ import es from '../../assets/i18n/es.json';
 import fr from '../../assets/i18n/fr.json';
 import it from '../../assets/i18n/it.json';
 import ro from '../../assets/i18n/ro.json';
+import internalizationDE from '@internalization/i18n/de.json';
+import internalizationEN from '@internalization/i18n/en.json';
+import internalizationES from '@internalization/i18n/es.json';
+import internalizationFR from '@internalization/i18n/fr.json';
+import internalizationIT from '@internalization/i18n/it.json';
+import internalizationRO from '@internalization/i18n/ro.json';
 import { langList } from './lang.constants';
 
 export function getTranslocoTestingModule(options: TranslocoTestingOptions = {}) {
@@ -34,6 +40,13 @@ export function getTranslocoTestingModule(options: TranslocoTestingOptions = {})
       'about/fr': aboutFR,
       'about/de': aboutDE,
       'about/ro': aboutRO,
+
+      'internalization/es': internalizationES,
+      'internalization/en': internalizationEN,
+      'internalization/it': internalizationIT,
+      'internalization/fr': internalizationFR,
+      'internalization/de': internalizationDE,
+      'internalization/ro': internalizationRO,
 
       ...langs,
     },
