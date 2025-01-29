@@ -95,7 +95,7 @@ const config: Config = {
     '^@theme/(.+)$': '<rootDir>/src/app/theme/$1',
     '^@actions/(.+)$': '<rootDir>/src/app/actions/$1',
     '^@store/(.+)$': '<rootDir>/src/app/store/$1',
-    '^@home/(.+)$': '<rootDir>/src/app/home/$1',
+    '^@welcome/(.+)$': '<rootDir>/src/app/welcome/$1',
     '^@about/(.+)$': '<rootDir>/src/app/about/$1',
     '^@internalization/(.+)$': '<rootDir>/src/app/internalization/$1',
 

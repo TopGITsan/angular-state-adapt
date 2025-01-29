@@ -1,6 +1,6 @@
 import { ABOUT_ROUTE } from '@about/about.route';
 import { Routes } from '@angular/router';
-import { HOME_ROUTE, homePath } from '@home/home.route';
+import { WELCOME_ROUTE, welcomePath } from 'src/app/welcome/welcome.route';
 import { ShellSidenvStoreService } from './shell-sidenav-store/shell-sidenav.service';
 import { ShellSidenavComponent } from './shell-sidenav.component';
 
@@ -10,10 +10,10 @@ export const routes: Routes = [
     component: ShellSidenavComponent,
     providers: [ShellSidenvStoreService],
     children: [
-      HOME_ROUTE,
+      WELCOME_ROUTE,
       ABOUT_ROUTE,
-      { path: '', redirectTo: `/${homePath}`, pathMatch: 'full' },
-      { path: '**', redirectTo: `/${homePath}`, pathMatch: 'full' },
+      { path: '', redirectTo: `/${welcomePath}`, pathMatch: 'full' },
+      { path: '**', redirectTo: `/${welcomePath}`, pathMatch: 'full' },
     ],
   },
 ];

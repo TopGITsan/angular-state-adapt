@@ -1,4 +1,4 @@
-import { homePath } from '@home/home.route';
+import { welcomePath } from 'src/app/welcome/welcome.route';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
@@ -7,6 +7,6 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./shell-sidenav/shell-sidenav.routes').then((m) => m.routes),
   },
-  { path: '', redirectTo: `/${homePath}`, pathMatch: 'full' },
-  { path: '**', redirectTo: `/${homePath}`, pathMatch: 'full' },
+  { path: '', redirectTo: `/${welcomePath}`, pathMatch: 'full' },
+  { path: '**', redirectTo: `/${welcomePath}`, pathMatch: 'full' },
 ];
