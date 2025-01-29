@@ -10,15 +10,17 @@ import { toSource } from '@state-adapt/rxjs';
 import { filter } from 'rxjs';
 import { initialShellSidenavState } from './shell-sidenav-state.type';
 import { shellSidenavAdapter } from './shell-sidenav.adapter';
-import { shellSidenavStorePrefix } from './shell-sidenav.constants';
+import {
+  breakpointMaxWidth,
+  breakpointMinWidth,
+  shellSidenavStorePrefix,
+} from './shell-sidenav.constants';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ShellSidenvStoreService {
   private readonly breakpointObserver = inject(BreakpointObserver);
   sidenavModeOverChange$ = this.breakpointObserver
-    .observe(['(min-width: 960px)'])
+    .observe([breakpointMinWidth])
     .pipe(
       filter((state) => state.matches),
       toSource(`[${shellSidenavStorePrefix}] sidenavModeOverChange$`),
@@ -29,7 +31,7 @@ export class ShellSidenvStoreService {
       toggleIsSidenavOpend: toggleSidenavChange$,
       setIsSidenavOpendFalse: closeSidenavChange$,
       setSidenavModeOver: this.breakpointObserver
-        .observe(['(max-width: 959px)'])
+        .observe([breakpointMaxWidth])
         .pipe(
           filter((state) => state.matches),
           toSource(`[${shellSidenavStorePrefix}] sidenavModeOverChange$`),
