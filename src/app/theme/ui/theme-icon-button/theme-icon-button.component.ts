@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { provideTranslocoScope, TranslocoDirective } from '@jsverse/transloco';
 import { ThemeStoreService } from '@theme/theme-store/theme-store.service';
-import { inlineLoader } from '@transloco/inline-loader.function';
+import { inlineLoader } from '@shared/i18n/inline-loader.function';
 import { ThemeIconMap } from '../../theme.type';
 
 @Component({

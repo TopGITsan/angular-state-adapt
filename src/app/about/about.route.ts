@@ -4,7 +4,7 @@ import {
   provideTranslocoLoadingTpl,
   provideTranslocoScope,
 } from '@jsverse/transloco';
-import { inlineLoader } from '@transloco/inline-loader.function';
+import { inlineLoader } from '@shared/i18n/inline-loader.function';
 
 export const ABOUT_ROUTE: Route = {
   path: 'about',

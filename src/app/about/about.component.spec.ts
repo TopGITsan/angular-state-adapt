@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TRANSLOCO_SCOPE } from '@jsverse/transloco';
 import { ContentComponent } from '@shared/ui/content/content.component';
-import { getTranslocoTestingModule } from '@transloco/get-transloco-testing-module.function';
+import { getTranslocoTestingModule } from '@internalization/get-transloco-testing-module.function';
 import { AboutComponent } from './about.component';
 
 describe('AboutComponent', () => {

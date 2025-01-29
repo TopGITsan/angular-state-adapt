@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-welcome',
   imports: [TitleCasePipe, TranslocoPipe],
   template: `
       <h1 class="text-clamp text-red-500 font-vibes">
@@ -17,4 +17,4 @@ import { TranslocoPipe } from '@jsverse/transloco';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {}
+export class WelcomeComponent {}

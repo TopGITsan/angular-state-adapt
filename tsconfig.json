@@ -25,8 +25,8 @@
       "@actions/*": ["src/app/actions/*"],
       "@store/*": ["src/app/store/*"],
       "@about/*": ["src/app/about/*"],
-      "@home/*": ["src/app/home/*"],
-      "@transloco/*": ["src/app/transloco/*"]
+      "@welcome/*": ["src/app/welcome/*"],
+      "@internalization/*": ["src/app/internalization/*"]
 
     }
   },

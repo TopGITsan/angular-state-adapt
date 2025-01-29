@@ -5,9 +5,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { provideTranslocoScope, TranslocoDirective } from '@jsverse/transloco';
-import { inlineLoader } from '@transloco/inline-loader.function';
-import { LangStoreService } from '@transloco/lang-store/lang-store.service';
-import { langList } from '@transloco/lang.constants';
+import { inlineLoader } from '@shared/i18n/inline-loader.function';
+import { LangStoreService } from '@internalization/lang-store/lang-store.service';
+import { langList } from '@internalization/lang.constants';
 
 @Component({
   selector: 'app-lang-menu-button',

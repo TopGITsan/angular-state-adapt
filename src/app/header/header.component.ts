@@ -5,7 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ExternalLinkDirective } from '@shared/directives';
 import { themeButtonIcons } from '@theme/theme.type';
 import { ThemeIconButtonComponent } from '@theme/ui/theme-icon-button/theme-icon-button.component';
-import { LangMenuButtonComponent } from '@transloco/ui/lang-menu-button/lang-menu-button.component';
+import { LangMenuButtonComponent } from '@internalization/ui/lang-menu-button/lang-menu-button.component';
 
 @Component({
   selector: 'app-header',

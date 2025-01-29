@@ -8,7 +8,7 @@ import {
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
 import { defaultStoreProvider } from '@state-adapt/angular';
-import { provideAppTransloco } from '@transloco/provide-app-transloco.provider';
+import { provideAppTransloco } from '@internalization/provide-app-transloco.provider';
 import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
