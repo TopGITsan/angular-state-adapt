@@ -7,6 +7,7 @@ import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { getTranslocoTestingModule } from '@internalization/get-transloco-testing-module.function';
 import { HeaderComponent } from '../header/header.component';
+import { ShellSidenvStoreService } from './shell-sidenav-store/shell-sidenav.service';
 
 describe('ShellSidenavComponent', () => {
   let component: ShellSidenavComponent;
@@ -22,6 +23,7 @@ describe('ShellSidenavComponent', () => {
         provideAnimationsAsync(),
         defaultStoreProvider,
         { provide: ActivatedRoute, useValue: fakeActivatedRoute },
+        ShellSidenvStoreService,
       ],
     }).compileComponents();
 

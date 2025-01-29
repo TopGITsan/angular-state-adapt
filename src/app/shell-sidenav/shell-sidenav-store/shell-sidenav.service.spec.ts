@@ -8,7 +8,7 @@ describe('GlobalStoreService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [defaultStoreProvider],
+      providers: [defaultStoreProvider, ShellSidenvStoreService],
     });
     service = TestBed.inject(ShellSidenvStoreService);
   });
