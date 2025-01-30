@@ -22,6 +22,7 @@ describe('AboutComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(fixture).toMatchSnapshot();
   });
   it(`should have the 'Build with angular' title`, () => {
     const fixture = TestBed.createComponent(AboutComponent);

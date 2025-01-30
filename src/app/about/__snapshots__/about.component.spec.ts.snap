@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutComponent should create 1`] = `
+<app-about
+  components={[Function String]}
+  styles={[Function String]}
+  subtitle={[Function String]}
+  title={[Function String]}
+>
+  <app-content>
+    <h1>
+      About
+    </h1>
+    <p>
+      <a
+        class="mdc-button mat-mdc-button mat-unthemed mat-mdc-button-base"
+        href="https://angular.dev/"
+        mat-button=""
+        mat-ripple-loader-class-name="mat-mdc-button-ripple"
+        mat-ripple-loader-uninitialized=""
+        target="_blank"
+      >
+        <span
+          class="mat-mdc-button-persistent-ripple mdc-button__ripple"
+        />
+        <span
+          class="mdc-button__label"
+        >
+           Build with angular 
+        </span>
+        <span
+          class="mat-focus-indicator"
+        />
+        <span
+          class="mat-mdc-button-touch-target"
+        />
+      </a>
+    </p>
+    <p>
+      <a
+        class="mdc-button mat-mdc-button mat-unthemed mat-mdc-button-base"
+        href="https://state-adapt.github.io/angular"
+        mat-button=""
+        mat-ripple-loader-class-name="mat-mdc-button-ripple"
+        mat-ripple-loader-uninitialized=""
+        target="_blank"
+      >
+        <span
+          class="mat-mdc-button-persistent-ripple mdc-button__ripple"
+        />
+        <span
+          class="mdc-button__label"
+        >
+           StateAdapt: Clean, Modern State Management 
+        </span>
+        <span
+          class="mat-focus-indicator"
+        />
+        <span
+          class="mat-mdc-button-touch-target"
+        />
+      </a>
+    </p>
+    <p>
+      <a
+        class="mdc-button mat-mdc-button mat-unthemed mat-mdc-button-base"
+        href="https://material.angular.io/"
+        mat-button=""
+        mat-ripple-loader-class-name="mat-mdc-button-ripple"
+        mat-ripple-loader-uninitialized=""
+        target="_blank"
+      >
+        <span
+          class="mat-mdc-button-persistent-ripple mdc-button__ripple"
+        />
+        <span
+          class="mdc-button__label"
+        >
+           Angular Material : Material Design components for Angular 
+        </span>
+        <span
+          class="mat-focus-indicator"
+        />
+        <span
+          class="mat-mdc-button-touch-target"
+        />
+      </a>
+    </p>
+    <p>
+      <a
+        class="mdc-button mat-mdc-button mat-unthemed mat-mdc-button-base"
+        href="https://tailwindcss.com/"
+        mat-button=""
+        mat-ripple-loader-class-name="mat-mdc-button-ripple"
+        mat-ripple-loader-uninitialized=""
+        target="_blank"
+      >
+        <span
+          class="mat-mdc-button-persistent-ripple mdc-button__ripple"
+        />
+        <span
+          class="mdc-button__label"
+        >
+           Tailwind: A utility-first CSS framework packed with classes 
+        </span>
+        <span
+          class="mat-focus-indicator"
+        />
+        <span
+          class="mat-mdc-button-touch-target"
+        />
+      </a>
+    </p>
+  </app-content>
+</app-about>
+`;

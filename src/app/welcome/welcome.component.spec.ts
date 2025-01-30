@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { WelcomeComponent } from './welcome.component';
 import { getTranslocoTestingModule } from '@internalization/get-transloco-testing-module.function';
+import { WelcomeComponent } from './welcome.component';
 
 describe('HomeComponent', () => {
   let component: WelcomeComponent;
@@ -18,8 +18,10 @@ describe('HomeComponent', () => {
   });
 
   it('should create', () => {
+    expect(fixture).toMatchSnapshot();
     expect(component).toBeTruthy();
   });
+
   it('should render title', () => {
     const fixture = TestBed.createComponent(WelcomeComponent);
 
