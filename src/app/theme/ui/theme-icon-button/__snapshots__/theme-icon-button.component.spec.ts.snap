@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeIconButtonComponent should create 1`] = `
+<app-theme-icon-button
+  Theme={[Function Object]}
+  changeToNextTheme$={[Function Source]}
+  theme$={[Function Observable]}
+  themeStore={[Function ThemeStoreService]}
+>
+  <button
+    class="mx-2 mdc-icon-button mat-mdc-icon-button"
+    mat-icon-button=""
+    mat-ripple-loader-centered=""
+    mat-ripple-loader-class-name="mat-mdc-button-ripple"
+    mat-ripple-loader-uninitialized=""
+  >
+    <span
+      class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"
+    />
+    <mat-icon
+      aria-hidden="true"
+      class="mat-icon notranslate"
+      role="img"
+    >
+    </mat-icon>
+    <span
+      class="mat-focus-indicator"
+    />
+    <span
+      class="mat-mdc-button-touch-target"
+    />
+  </button>
+</app-theme-icon-button>
+`;

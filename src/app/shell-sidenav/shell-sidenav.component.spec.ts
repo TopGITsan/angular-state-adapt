@@ -34,5 +34,6 @@ describe('ShellSidenavComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(fixture).toMatchSnapshot();
   });
 });
