@@ -1,8 +1,6 @@
-import { inject, Injectable } from '@angular/core';
-import { TranslocoService } from '@jsverse/transloco';
-import { adapt } from '@state-adapt/angular';
-import { getId } from '@state-adapt/core';
-import { toSource } from '@state-adapt/rxjs';
+import { languageChange$ } from '@actions/lang.actions';
+import { effect, inject, Injectable } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { isLang } from '@internalization/is-lang.function';
 import {
   getLanguageFromLocalStorage,
@@ -10,17 +8,22 @@ import {
 } from '@internalization/lang-local-storage';
 import { langStorePrefix } from '@internalization/lang.constants';
 import { Lang } from '@internalization/lang.types';
+import { TranslocoService } from '@jsverse/transloco';
+import { adapt } from '@state-adapt/angular';
+import { getId } from '@state-adapt/core';
+import { toSource } from '@state-adapt/rxjs';
 import { filter, merge, of, switchMap, tap } from 'rxjs';
+import { APPLICATION_BUS } from 'src/app/event-hub/event-bus/event-bus.token';
+import { LanguageChangedEvent } from 'src/app/events/language-change.event';
 import { initialLanguageState } from './lang-state.type';
 import { languageAdapter } from './language.adapter';
-import { languageChange$ } from '@actions/lang.actions';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LangStoreService {
   private readonly translocoService = inject(TranslocoService);
-
+  private readonly applicationBus = inject(APPLICATION_BUS);
   readonly languageFromStorage$ = of(getLanguageFromLocalStorage()).pipe(
     filter((lang): lang is Lang => isLang(lang)),
     toSource(`[${langStorePrefix}] Transloco languageFromStorage$`),
@@ -41,5 +44,11 @@ export class LangStoreService {
       ),
     },
     path: langStorePrefix + '_' + getId(),
+  });
+
+  readonly lang = toSignal(this.store.lang$, { requireSync: true });
+
+  stateChanged = effect(() => {
+    this.applicationBus.dispatch(new LanguageChangedEvent(this.lang()));
   });
 }

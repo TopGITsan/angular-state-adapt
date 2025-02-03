@@ -31,9 +31,14 @@ import { ShellSidenvStoreService } from './shell-sidenav-store/shell-sidenav.ser
         [mode]="sidenavMode"
         [opened]="sidenavOpened"
         (closed)="closeSidenav$.next()"
+        class="p-8"
       >
-        <a [routerLink]="'home'"> home </a>
-        <a [routerLink]="'about'"> about </a>
+        <p class="m-2">
+          <a [routerLink]="'home'"> home </a>
+        </p>
+        <p class="m-2">
+          <a [routerLink]="'about'"> about </a>
+        </p>
       </mat-sidenav>
       <mat-sidenav-content [@routeTransition]="route.snapshot.data">
         <router-outlet />

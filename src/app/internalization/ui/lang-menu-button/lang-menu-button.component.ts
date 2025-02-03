@@ -60,8 +60,8 @@ import { langList } from '@internalization/lang.constants';
   styles: ``,
 })
 export class LangMenuButtonComponent {
-  private readonly globalStore = inject(LangStoreService);
+  private readonly languageStore = inject(LangStoreService);
   readonly langList = langList;
-  readonly selectedLanguage$ = this.globalStore.store.lang$;
+  readonly selectedLanguage$ = this.languageStore.store.lang$;
   readonly languageChange$ = languageChange$;
 }
