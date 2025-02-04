@@ -1,13 +1,13 @@
-import { languageChange$ } from '@actions/lang.actions';
 import { AsyncPipe, TitleCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { provideTranslocoScope, TranslocoDirective } from '@jsverse/transloco';
-import { inlineLoader } from '@shared/i18n/inline-loader.function';
 import { LangStoreService } from '@internalization/lang-store/lang-store.service';
 import { langList } from '@internalization/lang.constants';
+import { provideTranslocoScope, TranslocoDirective } from '@jsverse/transloco';
+import { inlineLoader } from '@shared/i18n/inline-loader.function';
+import { languageChange$ } from '../../lang-store/lang.actions';
 
 @Component({
   selector: 'app-lang-menu-button',

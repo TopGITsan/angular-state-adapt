@@ -1,4 +1,4 @@
-import { nextThemeChange$ } from '@actions/theme.actions';
+import { nextThemeChange$ } from '@theme/theme.actions';
 import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';

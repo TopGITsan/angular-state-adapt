@@ -1,7 +1,3 @@
-import {
-  closeSidenavChange$,
-  toggleSidenavChange$,
-} from '@actions/sidenav.actions';
 import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -9,6 +5,7 @@ import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { routeTransition } from '@shared/animations/route-transition.animation';
 import { HeaderComponent } from '../header/header.component';
 import { ShellSidenvStoreService } from './shell-sidenav-store/shell-sidenav.service';
+import { closeSidenavChange$, toggleSidenavChange$ } from './sidenav.actions';
 
 @Component({
   selector: 'app-shell-sidenav',

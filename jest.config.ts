@@ -21,7 +21,6 @@ export default {
     {
       '@shared/*': ['src/app/shared/*'],
       '@theme/*': ['src/app/theme/*'],
-      '@actions/*': ['src/app/actions/*'],
       '@store/*': ['src/app/store/*'],
       '@about/*': ['src/app/about/*'],
       '@welcome/*': ['src/app/welcome/*'],

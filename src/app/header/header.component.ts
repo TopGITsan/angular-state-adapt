@@ -2,10 +2,10 @@ import { ChangeDetectionStrategy, Component, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { LangMenuButtonComponent } from '@internalization/ui/lang-menu-button/lang-menu-button.component';
 import { ExternalLinkDirective } from '@shared/directives';
 import { themeButtonIcons } from '@theme/theme.type';
 import { ThemeIconButtonComponent } from '@theme/ui/theme-icon-button/theme-icon-button.component';
-import { LangMenuButtonComponent } from '@internalization/ui/lang-menu-button/lang-menu-button.component';
 
 @Component({
   selector: 'app-header',

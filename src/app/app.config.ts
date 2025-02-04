@@ -11,7 +11,7 @@ import { defaultStoreProvider } from '@state-adapt/angular';
 import { provideAppTransloco } from '@internalization/provide-app-transloco.provider';
 import { routes } from './app.routes';
 import { provideApplicationBus } from './event-hub/provide-application-bus.function';
-import { APPLICATION_EVENT_HANDLERS } from './event-hub/event-handlers/provider-application-event-handlers';
+import { APPLICATION_EVENT_HANDLERS } from './event-handlers/provider-application-event-handlers';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideExperimentalZonelessChangeDetection(),
