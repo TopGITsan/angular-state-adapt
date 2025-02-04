@@ -142,23 +142,31 @@ exports[`ShellSidenavComponent should create 1`] = `
       class="cdk-visually-hidden cdk-focus-trap-anchor"
     />
     <mat-sidenav
-      class="mat-drawer mat-sidenav mat-drawer-side mat-drawer-opened"
+      class="mat-drawer mat-sidenav p-8 mat-drawer-side mat-drawer-opened"
       tabindex="-1"
     >
       <div
         cdkscrollable=""
         class="mat-drawer-inner-container"
       >
-        <a
-          href="/"
+        <p
+          class="m-2"
         >
-           home 
-        </a>
-        <a
-          href="/"
+          <a
+            href="/"
+          >
+             home 
+          </a>
+        </p>
+        <p
+          class="m-2"
         >
-           about 
-        </a>
+          <a
+            href="/"
+          >
+             about 
+          </a>
+        </p>
       </div>
     </mat-sidenav>
     <div
