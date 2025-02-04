@@ -4,6 +4,7 @@ import { getTranslocoTestingModule } from '@internalization/get-transloco-testin
 import { LangMenuButtonComponent } from './lang-menu-button.component';
 import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { defaultStoreProvider } from '@state-adapt/angular';
+import { provideApplicationBus } from '../../../event-hub/provide-application-bus.function';
 
 describe('LangMenuButtonComponent', () => {
   let component: LangMenuButtonComponent;
@@ -15,6 +16,7 @@ describe('LangMenuButtonComponent', () => {
       providers: [
         defaultStoreProvider,
         provideExperimentalZonelessChangeDetection(),
+        provideApplicationBus(),
       ],
     }).compileComponents();
 
