@@ -1,5 +1,7 @@
 import { effect, inject, Injectable } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { APPLICATION_BUS } from '@event-hub/event-bus/event-bus.token';
+import { LanguageChangedEvent } from '@events/language-changed.event';
 import { isLang } from '@internalization/is-lang.function';
 import {
   getLanguageFromLocalStorage,
@@ -12,8 +14,6 @@ import { adapt } from '@state-adapt/angular';
 import { getId } from '@state-adapt/core';
 import { toSource } from '@state-adapt/rxjs';
 import { filter, merge, of, switchMap, tap } from 'rxjs';
-import { APPLICATION_BUS } from '../../event-hub/event-bus/event-bus.token';
-import { LanguageChangedEvent } from '../../events/language-change.event';
 import { initialLanguageState } from './lang-state.type';
 import { languageChange$ } from './lang.actions';
 import { languageAdapter } from './language.adapter';
@@ -48,7 +48,7 @@ export class LangStoreService {
 
   readonly lang = toSignal(this.store.lang$, { requireSync: true });
 
-  stateChanged = effect(() => {
+  readonly langEffect = effect(() => {
     this.applicationBus.dispatch(new LanguageChangedEvent(this.lang()));
   });
 }
