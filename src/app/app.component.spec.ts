@@ -2,6 +2,7 @@ import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AppComponent } from './app.component';
+import { provideApplicationBus } from './event-hub/provide-application-bus.function';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -9,6 +10,7 @@ describe('AppComponent', () => {
       providers: [
         provideExperimentalZonelessChangeDetection(),
         provideAnimationsAsync(),
+        provideApplicationBus()
       ],
       imports: [AppComponent],
     }).compileComponents();

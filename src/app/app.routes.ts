@@ -1,5 +1,5 @@
-import { welcomePath } from 'src/app/welcome/welcome.route';
 import { Routes } from '@angular/router';
+import { welcomePath } from '@welcome/welcome.route';
 
 export const routes: Routes = [
   {

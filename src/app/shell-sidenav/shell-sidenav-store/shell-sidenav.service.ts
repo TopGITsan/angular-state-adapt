@@ -1,13 +1,10 @@
-import {
-  closeSidenavChange$,
-  toggleSidenavChange$,
-} from '@actions/sidenav.actions';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { inject, Injectable } from '@angular/core';
 import { adapt } from '@state-adapt/angular';
 import { getId } from '@state-adapt/core';
 import { toSource } from '@state-adapt/rxjs';
 import { filter } from 'rxjs';
+import { closeSidenavChange$, toggleSidenavChange$ } from '../sidenav.actions';
 import { initialShellSidenavState } from './shell-sidenav-state.type';
 import { shellSidenavAdapter } from './shell-sidenav.adapter';
 import {

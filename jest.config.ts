@@ -19,13 +19,14 @@ export default {
   testEnvironment: 'jsdom',
   moduleNameMapper: pathsToModuleNameMapper(
     {
-      '@shared/*': ['src/app/shared/*'],
-      '@theme/*': ['src/app/theme/*'],
-      '@actions/*': ['src/app/actions/*'],
-      '@store/*': ['src/app/store/*'],
-      '@about/*': ['src/app/about/*'],
-      '@welcome/*': ['src/app/welcome/*'],
-      '@internalization/*': ['src/app/internalization/*'],
+      "@about/*": ["src/app/about/*"],
+      "@event-hub/*": ["src/app/event-hub/*"],
+      "@events/*": ["src/app/events/*"],
+      "@internalization/*": ["src/app/internalization/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@store/*": ["src/app/store/*"],
+      "@theme/*": ["src/app/theme/*"],
+      "@welcome/*": ["src/app/welcome/*"]
     },
     { prefix: '<rootDir>' },
   ),

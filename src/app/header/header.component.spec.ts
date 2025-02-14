@@ -5,6 +5,7 @@ import { ExternalLinkDirective } from '@shared/directives';
 import { ThemeIconButtonComponent } from '@theme/ui/theme-icon-button/theme-icon-button.component';
 import { defaultStoreProvider } from '@state-adapt/angular';
 import { getTranslocoTestingModule } from '@internalization/get-transloco-testing-module.function';
+import { provideApplicationBus } from '../event-hub/provide-application-bus.function';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -15,6 +16,7 @@ describe('HeaderComponent', () => {
       providers: [
         provideExperimentalZonelessChangeDetection(),
         defaultStoreProvider,
+        provideApplicationBus(),
       ],
       imports: [
         HeaderComponent,

@@ -1,8 +1,8 @@
-import { nextThemeChange$ } from '@actions/theme.actions';
 import { Injectable } from '@angular/core';
 import { adapt } from '@state-adapt/angular';
 import { getId } from '@state-adapt/core';
 import { toSource } from '@state-adapt/rxjs';
+import { nextThemeChange$ } from '@theme/theme.actions';
 import { of } from 'rxjs';
 import { themeLocalStorageKey } from '../theme.type';
 import { initialThemeState } from './theme-state.type';

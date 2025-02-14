@@ -8,6 +8,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { getTranslocoTestingModule } from '@internalization/get-transloco-testing-module.function';
 import { HeaderComponent } from '../header/header.component';
 import { ShellSidenvStoreService } from './shell-sidenav-store/shell-sidenav.service';
+import { provideApplicationBus } from '../event-hub/provide-application-bus.function';
 
 describe('ShellSidenavComponent', () => {
   let component: ShellSidenavComponent;
@@ -24,6 +25,7 @@ describe('ShellSidenavComponent', () => {
         defaultStoreProvider,
         { provide: ActivatedRoute, useValue: fakeActivatedRoute },
         ShellSidenvStoreService,
+        provideApplicationBus()
       ],
     }).compileComponents();
 

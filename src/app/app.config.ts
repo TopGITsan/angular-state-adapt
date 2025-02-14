@@ -7,9 +7,12 @@ import {
 } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
-import { defaultStoreProvider } from '@state-adapt/angular';
+import { provideApplicationBus } from '@event-hub/provide-application-bus.function';
 import { provideAppTransloco } from '@internalization/provide-app-transloco.provider';
+import { defaultStoreProvider } from '@state-adapt/angular';
 import { routes } from './app.routes';
+import { APPLICATION_EVENT_HANDLERS } from './event-handlers/provider-application-event-handlers';
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideExperimentalZonelessChangeDetection(),
@@ -25,6 +28,8 @@ export const appConfig: ApplicationConfig = {
         })
       : [],
     provideHttpClient(),
+    provideApplicationBus(),
     provideAppTransloco(),
+    APPLICATION_EVENT_HANDLERS,
   ],
 };

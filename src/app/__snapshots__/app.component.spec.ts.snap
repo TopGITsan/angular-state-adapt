@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AppComponent should create the app 1`] = `
-<app-root>
+<app-root
+  applicationEventHandlerRegistryService={[Function ApplicationEventHandlerRegistryService]}
+>
   <router-outlet />
 </app-root>
 `;
