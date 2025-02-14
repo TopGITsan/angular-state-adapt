@@ -33,9 +33,6 @@ exports[`HeaderComponent should create 1`] = `
         class="mat-mdc-button-touch-target"
       />
     </button>
-    <span>
-      Less is More
-    </span>
     <span
       class="flex-auto"
     />
@@ -72,6 +69,8 @@ exports[`HeaderComponent should create 1`] = `
     <app-theme-icon-button>
     </app-theme-icon-button>
     <app-lang-menu-button>
+      <mat-menu>
+      </mat-menu>
     </app-lang-menu-button>
   </mat-toolbar>
 </app-header>
