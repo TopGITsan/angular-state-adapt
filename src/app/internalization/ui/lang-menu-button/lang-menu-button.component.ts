@@ -41,10 +41,13 @@ import { languageChange$ } from '../../lang-store/lang.actions';
         <mat-icon>arrow_drop_down</mat-icon>
         {{ t(selectedLanguage) }}
       </button>
-      <mat-menu #menu="matMenu" class="max-h-64">
-        <!--By default, the menu content will be initialized even when the panel is closed. To defer initialization until the menu is open, the content can be provided as an ng-template with the matMenuContent attribute  -->
-        <ng-template matMenuContent class="p-2">
-          @for (lang of langList; track lang) {
+    </ng-container>
+
+    <mat-menu #menu="matMenu" class="max-h-64">
+      <!--By default, the menu content will be initialized even when the panel is closed. To defer initialization until the menu is open, the content can be provided as an ng-template with the matMenuContent attribute  -->
+      <ng-template matMenuContent class="p-2">
+        @for (lang of langList; track lang) {
+          <ng-container *transloco="let t; prefix: 'lang'; lang: lang+'|static';">
             <button
               mat-menu-item
               attr.aria-label="button for language {{ t(lang) | titlecase }}"
@@ -52,10 +55,10 @@ import { languageChange$ } from '../../lang-store/lang.actions';
             >
               {{ t(lang) | titlecase }}
             </button>
-          }
-        </ng-template>
-      </mat-menu>
-    </ng-container>
+          </ng-container>
+        }
+      </ng-template>
+    </mat-menu>
   `,
   styles: ``,
 })
