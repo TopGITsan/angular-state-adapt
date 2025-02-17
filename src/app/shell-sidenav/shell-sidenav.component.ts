@@ -1,7 +1,8 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, TitleCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { routeTransition } from '@shared/animations/route-transition.animation';
 import { HeaderComponent } from '../header/header.component';
 import { ShellSidenvStoreService } from './shell-sidenav-store/shell-sidenav.service';
@@ -15,6 +16,8 @@ import { closeSidenavChange$, toggleSidenavChange$ } from './sidenav.actions';
     MatSidenavModule,
     RouterLink,
     RouterOutlet,
+    TitleCasePipe,
+    TranslocoPipe,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [routeTransition],
@@ -31,10 +34,10 @@ import { closeSidenavChange$, toggleSidenavChange$ } from './sidenav.actions';
         class="p-8"
       >
         <p class="m-2">
-          <a [routerLink]="'home'"> home </a>
+          <a [routerLink]="'home'"> {{ 'home' | transloco | titlecase }} </a>
         </p>
         <p class="m-2">
-          <a [routerLink]="'about'"> about </a>
+          <a [routerLink]="'about'"> {{ 'about' | transloco | titlecase }} </a>
         </p>
       </mat-sidenav>
       <mat-sidenav-content [@routeTransition]="route.snapshot.data">

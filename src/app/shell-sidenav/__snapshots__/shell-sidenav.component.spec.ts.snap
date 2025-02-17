@@ -155,7 +155,7 @@ exports[`ShellSidenavComponent should create 1`] = `
           <a
             href="/"
           >
-             home 
+             Home 
           </a>
         </p>
         <p
@@ -164,7 +164,7 @@ exports[`ShellSidenavComponent should create 1`] = `
           <a
             href="/"
           >
-             about 
+             About 
           </a>
         </p>
       </div>

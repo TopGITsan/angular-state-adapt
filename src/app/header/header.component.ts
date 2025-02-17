@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { LangMenuButtonComponent } from '@internalization/ui/lang-menu-button/lang-menu-button.component';
+import { TranslocoDirective } from '@jsverse/transloco';
 import { ExternalLinkDirective } from '@shared/directives';
 import { themeButtonIcons } from '@theme/theme.type';
 import { ThemeIconButtonComponent } from '@theme/ui/theme-icon-button/theme-icon-button.component';
@@ -10,12 +11,13 @@ import { ThemeIconButtonComponent } from '@theme/ui/theme-icon-button/theme-icon
 @Component({
   selector: 'app-header',
   imports: [
-    MatToolbarModule,
+    ExternalLinkDirective,
+    LangMenuButtonComponent,
     MatButtonModule,
     MatIconModule,
-    ExternalLinkDirective,
+    MatToolbarModule,
     ThemeIconButtonComponent,
-    LangMenuButtonComponent,
+    TranslocoDirective,
   ],
   template: `
     <mat-toolbar>
@@ -26,7 +28,10 @@ import { ThemeIconButtonComponent } from '@theme/ui/theme-icon-button/theme-icon
       >
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Less is More</span>
+      <ng-container *transloco="let t">
+        <span>{{ t('title') }}</span>
+      </ng-container>
+
       <span class="flex-auto"></span>
       <a
         mat-icon-button
