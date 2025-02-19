@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       fontSize: {
         clamp: "clamp(1rem, 5vw, 6rem)",
+        clamp3: "clamp(3rem, 7vw, 7rem)",
       },
       colors: {
         primary: {

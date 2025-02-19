@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HomeComponent should create 1`] = `
-<app-welcome>
+<app-welcome
+  lang$={[Function Observable]}
+>
   <h1
-    class="text-clamp text-red-500 font-vibes"
+    class="text-clamp3 block-transparente-clip-text font-vibes"
   >
      Hello! 
   </h1>
