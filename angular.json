@@ -94,9 +94,18 @@
           }
         },
         "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+          "builder": "@ngx-playwright/test:run",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js"
+            "config": "e2e/playwright/playwright.config.ts",
+            "devServerTarget": "serve"
+          },
+          "configurations": {
+            "ci": {
+              "forbidOnly": true
+            },
+            "production": {
+              "devServerTarget": "angular-state-adapt:serve:production"
+            }
           }
         }
       }
