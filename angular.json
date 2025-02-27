@@ -92,6 +92,21 @@
               "src/**/*.html"
             ]
           }
+        },
+        "e2e": {
+          "builder": "@ngx-playwright/test:run",
+          "options": {
+            "config": "e2e/playwright/playwright.config.ts",
+            "devServerTarget": "serve"
+          },
+          "configurations": {
+            "ci": {
+              "forbidOnly": true
+            },
+            "production": {
+              "devServerTarget": "angular-state-adapt:serve:production"
+            }
+          }
         }
       }
     }
